@@ -30,7 +30,7 @@ class TripsRepository:
         trip = cursor.fetchone()
         return trip
     
-    def update_trip_status(self, trip_id: str) -> List[Tuple]:
+    def update_trip_status(self, trip_id: str) -> None:
         cursor = self.__conn.cursor()
         cursor.execute(
             '''
