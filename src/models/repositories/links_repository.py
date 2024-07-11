@@ -14,7 +14,7 @@ class LinksRepository:
                 VALUES
                     (?,?,?,?)
             ''', (  
-                links_infos["id"],
+                links_infos["link_id"],
                 links_infos["link"],
                 links_infos["trip_id"],
                 links_infos["title"],
