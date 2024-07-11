@@ -5,7 +5,7 @@ class EmailsToInviteRepository:
     def __init__(self, conn: Connection) -> None:
         self.__conn = conn
 
-    def emails_to_invite(self, emails_infos: Dict) -> None:
+    def registry_email(self, emails_infos: Dict) -> None:
         cursor = self.__conn.cursor()
         cursor.execute(
             '''
@@ -24,6 +24,5 @@ class EmailsToInviteRepository:
     def find_emails_from_trip(self, trip_id: str) -> List[Tuple]:
         cursor = self.__conn.cursor()
         cursor.execute(''' SELECT * FROM emails_to_invite WHERE trip_id = ? ''', (trip_id,))
-        trip = cursor.fetchall()
-        return trip
-    
+        emails = cursor.fetchall()
+        return emails
