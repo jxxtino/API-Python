@@ -3,12 +3,12 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
 def send_email(to_addrs, body):
-    from_addr = "ilq2krdexj6dd2fh@ethereal.email"
-    login = "ilq2krdexj6dd2fh@ethereal.email"
-    password = "JyfTsh8a73rRTAvYvD"
+    from_addr = "af555mtoa7cjtq5h@ethereal.email"
+    login = "af555mtoa7cjtq5h@ethereal.email"
+    password = "51mAhqpRQfbSqWMsEy"
 
     msg = MIMEMultipart()
-    msg["from"] = "viagem@email.com"
+    msg["from"] = "viagens_confirmar@email.com"
     msg["to"] = ', '.join(to_addrs)
 
     msg["Subject"] = "Confirmação de Viagem!"

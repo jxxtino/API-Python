@@ -12,7 +12,7 @@ class ActivitiesRepository:
                 INSERT INTO activities
                     (id, trip_id, title, occurs_at)
                 VALUES
-                    (?,?,?)
+                    (?,?,?,?)
             ''', (  
                 activitie_infos["id"],
                 activitie_infos["trip_id"],
@@ -24,6 +24,10 @@ class ActivitiesRepository:
 
     def find_activitie_from_trip(self, trip_id: str) -> List[Tuple]:
         cursor = self.__conn.cursor()
-        cursor.execute(''' SELECT * FROM activites WHERE trip_id = ? ''', (trip_id,))
+        cursor.execute(
+            ''' 
+                SELECT * FROM activities WHERE trip_id = ? 
+            ''', (trip_id,))
+        
         activitie = cursor.fetchall()
         return activitie
